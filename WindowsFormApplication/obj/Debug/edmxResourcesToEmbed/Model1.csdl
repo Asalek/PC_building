@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="case1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="cooling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="socket" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="type1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="CPU">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="socket" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cores" Type="Int32" />
+    <Property Name="threads" Type="Int32" />
+    <Property Name="frequency" Type="Double" />
+    <Property Name="price" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Demand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="cpu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="motherboard" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ram" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="graphiccard" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="stockage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="powerSupplay" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="cooling" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="case1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="graphicCard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MemorySize" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="motherboard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="socket" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RamCount" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="powerSupply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="power1" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="RAM">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="size" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="stockage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="type1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="PCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="case1" EntityType="Self.case1" />
+    <EntitySet Name="coolings" EntityType="Self.cooling" />
+    <EntitySet Name="CPUs" EntityType="Self.CPU" />
+    <EntitySet Name="Demands" EntityType="Self.Demand" />
+    <EntitySet Name="graphicCards" EntityType="Self.graphicCard" />
+    <EntitySet Name="motherboards" EntityType="Self.motherboard" />
+    <EntitySet Name="powerSupplies" EntityType="Self.powerSupply" />
+    <EntitySet Name="RAMs" EntityType="Self.RAM" />
+    <EntitySet Name="stockages" EntityType="Self.stockage" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+  </EntityContainer>
+</Schema>

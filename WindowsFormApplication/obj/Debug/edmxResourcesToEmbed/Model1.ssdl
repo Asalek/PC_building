@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="case1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="30" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PC.dbo.chipping' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="chipping">
+          <Property Name="country" Type="nvarchar" MaxLength="20" />
+          <Property Name="motherboard" Type="int" />
+          <Property Name="cpu" Type="int" />
+          <Property Name="ram" Type="int" />
+          <Property Name="graphiccard" Type="int" />
+          <Property Name="stockage" Type="int" />
+          <Property Name="powerSupplay" Type="int" />
+          <Property Name="cooling" Type="int" />
+          <Property Name="case1" Type="int" />
+          <Property Name="client" Type="int" />
+          <Property Name="price" Type="money" />
+        </EntityType>-->
+  <EntityType Name="cooling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="socket" Type="nvarchar" MaxLength="20" />
+    <Property Name="type1" Type="nvarchar" MaxLength="20" />
+    <Property Name="name" Type="nvarchar" MaxLength="30" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="CPU">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="socket" Type="nvarchar" MaxLength="11" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" />
+    <Property Name="cores" Type="int" />
+    <Property Name="threads" Type="int" />
+    <Property Name="frequency" Type="float" />
+    <Property Name="price" Type="int" />
+  </EntityType>
+  <EntityType Name="Demand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cpu" Type="nvarchar" MaxLength="20" />
+    <Property Name="motherboard" Type="nvarchar" MaxLength="20" />
+    <Property Name="ram" Type="nvarchar" MaxLength="20" />
+    <Property Name="graphiccard" Type="nvarchar" MaxLength="30" />
+    <Property Name="stockage" Type="nvarchar" MaxLength="30" />
+    <Property Name="powerSupplay" Type="nvarchar" MaxLength="30" />
+    <Property Name="cooling" Type="nvarchar" MaxLength="30" />
+    <Property Name="case1" Type="nvarchar" MaxLength="30" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="graphicCard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="30" />
+    <Property Name="MemorySize" Type="int" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="motherboard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="socket" Type="nvarchar" MaxLength="11" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" />
+    <Property Name="RamCount" Type="int" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="powerSupply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="30" />
+    <Property Name="power1" Type="int" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="RAM">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" />
+    <Property Name="size" Type="int" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="stockage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="30" />
+    <Property Name="type1" Type="nvarchar" MaxLength="10" />
+    <Property Name="size" Type="nvarchar" MaxLength="5" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__case1__5BE2A6F2" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__client__5CD6CB2B" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__coolin__5AEE82B9" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__cpu__5629CD9C" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__graphi__5812160E" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__mother__5535A963" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__powerS__59FA5E80" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__ram__571DF1D5" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'PC.dbo.chipping' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__chipping__stocka__59063A47" />-->
+  <EntityContainer Name="PCModelStoreContainer">
+    <EntitySet Name="case1" EntityType="Self.case1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cooling" EntityType="Self.cooling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPU" EntityType="Self.CPU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Demand" EntityType="Self.Demand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="graphicCard" EntityType="Self.graphicCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="motherboard" EntityType="Self.motherboard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="powerSupply" EntityType="Self.powerSupply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stockage" EntityType="Self.stockage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
