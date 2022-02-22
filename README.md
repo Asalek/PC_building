@@ -2,16 +2,16 @@
 - C#, Linq, SQL Project that can help you t build you own Gaming PC
 
 <p>
-	<img src="../img/Home.pmg" alt="Home" width=70% height=auto>
+	<img src="img/Home.png" alt="Home" width=70% height=auto>
 </p>
 <p>
-	<img src="../img/CPU_select.png" alt="Home" width=70% height=auto>
+	<img src="img/CPU_select.png" alt="Home" width=70% height=auto>
 </p>
 <p>
-	<img src="../img/motherboard_select.png" alt="Home" width=70% height=auto>
+	<img src="img/motherboard_select.png" alt="Home" width=70% height=auto>
 </p>
 <p>
-	<img src="../img/ram_select.png" alt="Home" width=70% height=auto>
+	<img src="img/ram_select.png" alt="Home" width=70% height=auto>
 </p>
 
 ## explaining
