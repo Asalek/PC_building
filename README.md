@@ -1,6 +1,19 @@
 # PC Building
 - C#, Linq, SQL Project that can help you t build you own Gaming PC
 
+<p>
+	<img src="../img/Home.pmg" alt="Home" width=70% height=auto>
+</p>
+<p>
+	<img src="../img/CPU_select.png" alt="Home" width=70% height=auto>
+</p>
+<p>
+	<img src="../img/motherboard_select.png" alt="Home" width=70% height=auto>
+</p>
+<p>
+	<img src="../img/ram_select.png" alt="Home" width=70% height=auto>
+</p>
+
 ## explaining
 
 - [PDF EXPLINATION FILE](https://github.com/Asalek/PC_building/blob/master/Pc%20Building.pdf)
